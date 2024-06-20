@@ -1,4 +1,17 @@
-let age: number = 20;
+type Customer = {
+  birthday?: Date;
+};
 
-if (age < 50) age += 10;
-console.log(age);
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0
+    ? null
+    : {
+        birthday: new Date(),
+      };
+}
+
+let customer = getCustomer(1);
+console.log(customer?.birthday?.getFullYear());
+
+let log: any = null;
+log?.('a');
